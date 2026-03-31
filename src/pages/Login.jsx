@@ -42,7 +42,7 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex bg-white dark:bg-surface-900 selection:bg-primary-100 selection:text-primary-900">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-surface-900 selection:bg-primary-100 selection:text-primary-900 overflow-y-auto lg:overflow-hidden">
       {/* Left side - Branded Panel */}
       <div className="hidden lg:flex lg:w-[45%] xl:w-[40%] bg-primary-600 relative overflow-hidden items-center justify-center p-12">
         {/* Animated Background Orbs */}
@@ -90,17 +90,17 @@ export default function Login() {
       </div>
 
       {/* Right side - Form Panel */}
-      <div className="flex-1 flex flex-col justify-center items-center px-6 py-12 lg:px-20">
+      <div className="flex-1 flex flex-col items-center px-6 py-12 lg:px-20 lg:justify-center">
         <div className="w-full max-w-[400px]">
           {/* Brand Header (Mobile) */}
-          <div className="lg:hidden flex items-center gap-3 mb-10">
+          <div className="lg:hidden flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-primary-600 flex items-center justify-center text-white shadow-lg shadow-primary-600/25">
               <GraduationCap size={22} />
             </div>
             <span className="text-xl font-bold text-surface-900 dark:text-white tracking-tight">Study Buddy</span>
           </div>
 
-          <div className="mb-10 text-center lg:text-left">
+          <div className="mb-8 text-center lg:text-left">
             <h2 className="text-3xl font-extrabold text-surface-900 dark:text-white tracking-tight mb-2">
               {isSignUp ? 'Join Study Buddy' : 'Welcome back'}
             </h2>

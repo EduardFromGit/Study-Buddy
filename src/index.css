@@ -24,6 +24,21 @@
   --color-surface-900: #18181b;
   --color-surface-950: #09090b;
 
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-900: #14532d;
+
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-900: #7f1d1d;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   --animate-fade-in: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
