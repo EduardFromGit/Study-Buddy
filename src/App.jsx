@@ -11,13 +11,14 @@ import Tasks from './pages/Tasks'
 import Analytics from './pages/Analytics'
 import Settings from './pages/Settings'
 import Schedule from './pages/Schedule'
+import Loader from './components/ui/Loader'
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth()
   
   if (loading) return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-950 flex items-center justify-center">
-      <div className="w-12 h-12 border-4 border-primary-100 dark:border-primary-900 border-t-primary-600 rounded-full animate-spin" />
+      <Loader />
     </div>
   )
   

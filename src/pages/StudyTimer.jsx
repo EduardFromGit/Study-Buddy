@@ -202,7 +202,7 @@ export default function StudyTimer() {
 
         {/* The Giant Timer Ring */}
         <div className="lg:col-span-7 flex flex-col items-center order-1 lg:order-2">
-          <div className="relative w-72 h-72 sm:w-[500px] sm:h-[500px] group drop-shadow-[0_20px_80px_rgba(124,58,237,0.15)]">
+          <div className="relative w-64 h-64 sm:w-[500px] sm:h-[500px] group drop-shadow-[0_20px_80px_rgba(124,58,237,0.15)]">
             <svg className="w-full h-full -rotate-90">
               <circle
                 cx="50%"
@@ -227,29 +227,31 @@ export default function StudyTimer() {
             </svg>
 
             {/* Timer Core Display */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-white/20 dark:bg-black/10 m-6 sm:m-16 rounded-full backdrop-blur-[40px] border border-white/30 dark:border-white/5 shadow-inner">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 sm:p-6 bg-white/20 dark:bg-black/10 m-4 sm:m-16 rounded-full backdrop-blur-[40px] border border-white/30 dark:border-white/5 shadow-inner">
               <div className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.4em] mb-6 sm:mb-10 flex items-center gap-2 border ${isBreak ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-primary-50 text-primary-600 border-primary-100'}`}>
                 <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${isBreak ? 'bg-emerald-500' : 'bg-primary-500'}`} />
                 {isBreak ? 'Break Phase' : 'Focus Phase'}
               </div>
-              <div className="text-7xl sm:text-[9rem] font-black text-surface-900 dark:text-white font-mono tracking-tighter leading-none mb-10 sm:mb-16 selection:bg-transparent transition-all">
-                {String(minutes).padStart(2, '0')}<span className={`inline-block w-4 sm:w-8 transition-opacity duration-500 ${isActive ? 'opacity-20' : ''}`}>:</span>{String(seconds).padStart(2, '0')}
+              <div className="text-6xl sm:text-[9rem] font-black text-surface-900 dark:text-white font-mono leading-none mb-10 sm:mb-16 selection:bg-transparent transition-all flex items-center justify-center">
+                <span>{String(minutes).padStart(2, '0')}</span>
+                <span className={`inline-block mx-1 sm:mx-2 transition-opacity duration-500 ${isActive ? 'opacity-20' : ''}`}>:</span>
+                <span>{String(seconds).padStart(2, '0')}</span>
               </div>
               <div className="flex gap-6 sm:gap-10">
                 <Button
                   variant={isBreak ? 'success' : 'primary'}
                   size="lg"
                   onClick={toggleTimer}
-                  className="!rounded-[2.5rem] w-20 h-20 sm:w-28 sm:h-28 !p-0 shadow-2xl flex items-center justify-center active:scale-90 shadow-primary-500/30 group-hover:scale-105 transition-all"
+                  className="!rounded-[2.5rem] w-16 h-16 sm:w-28 sm:h-28 !p-0 shadow-2xl flex items-center justify-center active:scale-90 shadow-primary-500/30 group-hover:scale-105 transition-all"
                 >
-                  {isActive ? <Pause size={32} sm:size={44} /> : <Play size={32} sm:size={44} className="ml-2 fill-white" />}
+                  {isActive ? <Pause className="w-8 h-8 sm:w-11 sm:h-11" /> : <Play className="w-8 h-8 sm:w-11 sm:h-11 ml-1.5 fill-white" />}
                 </Button>
                 
                 <button
                   onClick={resetTimer}
-                  className="w-20 h-20 sm:w-28 sm:h-28 rounded-[2.5rem] bg-white dark:bg-surface-800 text-surface-400 hover:text-primary-600 border border-surface-200 dark:border-surface-700 flex items-center justify-center transition-all hover:rotate-90 active:scale-90 cursor-pointer shadow-xl shadow-surface-200/20"
+                  className="w-16 h-16 sm:w-28 sm:h-28 rounded-[2.5rem] bg-white dark:bg-surface-800 text-surface-400 hover:text-primary-600 border border-surface-200 dark:border-surface-700 flex items-center justify-center transition-all hover:rotate-90 active:scale-90 cursor-pointer shadow-xl shadow-surface-200/20"
                 >
-                  <RotateCcw size={28} sm:size={36} />
+                  <RotateCcw className="w-7 h-7 sm:w-9 sm:h-9" />
                 </button>
               </div>
             </div>

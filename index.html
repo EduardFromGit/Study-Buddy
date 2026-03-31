@@ -23,10 +23,41 @@
       overscroll-behavior: none;
       -webkit-tap-highlight-color: transparent;
     }
+
+    .initial-load {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      z-index: 10000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .initial-load { background: #000000; }
+    }
+
+    .loader {
+      width: fit-content;
+      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+      font-size: 30px;
+      padding-bottom: 8px;
+      color: #7c3aed;
+      background: linear-gradient(#7c3aed 0 0) 0 100%/0% 3px no-repeat;
+      animation: l2 2s linear infinite;
+    }
+    .loader:before { content: "Study Buddy..." }
+    @keyframes l2 { to { background-size: 100% 3px } }
   </style>
 </head>
 <body class="h-full antialiased selection:bg-primary-100 selection:text-primary-900 dark:selection:bg-primary-900/30 dark:selection:text-primary-400">
-  <div id="root" class="h-full"></div>
+  <div id="root" class="h-full">
+    <div class="initial-load">
+      <div class="loader"></div>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
